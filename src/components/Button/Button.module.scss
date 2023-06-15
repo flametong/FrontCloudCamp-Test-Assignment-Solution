@@ -1,0 +1,42 @@
+@use "../../styles/global/" as *;
+
+.button {
+    background-color: $color-purple;
+    border: 0.1rem solid $color-purple;
+    color: #FFF;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    @include prefix(transition, 0.3s, webkit o);
+  
+    &:hover {
+      background-color: #FFF;
+      color: $color-purple;
+      cursor: pointer;
+    }
+}
+
+.outline {
+    background-color: #FFF;
+    color: $color-purple;
+
+    &:hover {
+        background-color: $color-purple;
+        color: #FFF;
+        cursor: pointer; 
+    }
+}
+
+.adding {
+    background-color: #FFF;
+    color: $color-purple;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    border:none;
+
+    &:hover {
+        @include prefix(transform, scale(0.8), webkit ms);
+    }
+}

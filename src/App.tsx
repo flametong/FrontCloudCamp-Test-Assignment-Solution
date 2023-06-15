@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './dist/styles.css'
+
+import { Home } from './pages/Home/Home';
+import { Form } from './pages/Form/Form';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { RouteEndpoints } from './data/enums';
+import { Error404 } from './pages/Error404/Error404';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path={RouteEndpoints.Home} element={<Home />} />
+        <Route path={RouteEndpoints.Form} element={<Form />} />
+        <Route path={RouteEndpoints.Error404} element={<Error404 />} />
+        <Route path="*" element={<Navigate to={RouteEndpoints.Error404} />} />
+      </Routes>
+    </>
   );
 }
 

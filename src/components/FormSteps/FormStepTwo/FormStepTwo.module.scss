@@ -1,0 +1,34 @@
+@use "../../../styles/global/" as *;
+
+.formContainer {
+    font-size: $label-size;
+}
+
+.buttonContainer {
+    width: 100%;
+    margin-top: 6rem;
+    @include display-flex();
+    @include prefix(flex-wrap, wrap, ms);
+    @include justify-content(space-between);
+
+    /* 510px / 16px = 31.875em */
+    @media only screen and (max-width: 31.875em) {
+        margin-top: 3rem;
+        height: 10rem;
+        @include flex-direction-column();
+        @include align-items(space-between);
+    }
+}
+
+.advantages {
+    @include display-flex();
+    @include flex-direction-column();
+}
+
+.advantagesTitle {
+    font-size: $label-size;
+}
+
+.checkboxGroup {
+    padding: 1rem 0 2rem;
+}

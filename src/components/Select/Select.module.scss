@@ -1,0 +1,44 @@
+@use "../../styles/global/" as *;
+
+.selectContainer {
+    @include display-flex();
+    @include flex-direction-column();
+    padding: 1.5rem 0;
+    font-size: $label-size;
+    width: 100%;
+
+    .label {
+        margin-bottom: 0.5rem;
+        @include width-fit-content();
+    }
+
+    .select {
+        background-color: #FFF;
+        border: 0.2rem solid #E7E7E7;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        max-width: 30rem;
+        width: 100%;
+        color: #747474;
+        
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: 0.2rem solid $color-purple; 
+        }
+
+        .option {
+            color: $color-gray-dark;
+        }
+    }
+
+    .errorContainer {
+        margin-top: 0.5rem;
+
+        .errorText {
+            color: #FF6060;
+        }
+    }
+}

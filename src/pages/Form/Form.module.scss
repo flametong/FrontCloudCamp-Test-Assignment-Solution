@@ -1,0 +1,16 @@
+@use "../../styles/global/" as *;
+
+.formPageContainer {
+    max-width: 80rem;
+    width: 90%;
+    @include height-fit-content();
+    background-color: #FFF;
+    border-radius: 2rem;
+    margin: 5rem auto 0;
+    padding: 5rem 8rem;
+
+    /* 510px / 16px = 31.875em */
+    @media only screen and (max-width: 31.875em) {
+        padding: 2.5rem 4rem;
+    }
+}

@@ -1,0 +1,41 @@
+@use "../../styles/global/" as *;
+
+.textareaContainer {
+    @include display-flex();
+    @include flex-direction-column();
+    font-size: $label-size;
+
+    .label {
+        margin-bottom: 1rem;
+        @include width-fit-content();
+    }
+    
+    .textarea {
+        resize: vertical;
+        padding: 1rem;
+        border: 0.2rem solid #E7E7E7;
+        border-radius: 0.5rem;
+
+        &:focus {
+            outline: 0.2rem solid $color-purple; 
+        }
+    }
+
+    .infoContainer {
+        @include display-flex();
+        @include justify-content(space-between);
+        @include align-items(center);
+        margin-top: 0.5rem;
+
+        .errorContainer {
+            .errorText {
+                color: #ED4D59;
+            }
+        }
+
+        .textareaLength {
+            min-width: 5rem;
+            text-align: end;
+        }
+    }
+}

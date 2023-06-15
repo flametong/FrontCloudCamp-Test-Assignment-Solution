@@ -1,0 +1,49 @@
+@use "../../styles/global/" as *;
+
+.inputContainer {
+    @include display-flex();
+    @include align-items(center);
+    padding: 1rem 0;
+    font-size: $label-size;
+
+    .input {
+        background-color: #FFF;
+        border: 0.2rem solid #E7E7E7;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 30rem;
+
+        &:focus {
+            outline: 0.2rem solid $color-purple;
+        }
+    }
+
+    .removeIconContainer {
+        margin-left: 1.5rem;
+
+        .removeButton {
+            border: none;
+            background-color: #FFF;
+
+            &:hover {
+                cursor: pointer;
+
+                .icon {
+                    @include prefix(filter, invert(38%) sepia(62%) saturate(6494%) hue-rotate(232deg) brightness(103%) contrast(96%), webkit);
+                }
+            }
+        }
+
+        .icon {
+            width: 2rem;
+        }
+    }
+
+    .errorContainer {
+        margin-top: 0.5rem;
+
+        .errorText {
+            color: #ED4D59;
+        }
+    }
+}

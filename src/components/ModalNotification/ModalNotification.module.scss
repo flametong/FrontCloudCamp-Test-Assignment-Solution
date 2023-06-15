@@ -1,0 +1,94 @@
+@use "../../styles/global/" as *;
+
+.notificationModalContainer {
+    background-color: #FFF;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 40rem;
+    padding: 3rem;
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+
+    .success {
+        width: 40rem;
+        gap: 5rem;
+        @include display-flex();
+        @include justify-content(center);
+        @include align-items(center);
+        @include flex-direction-column();
+        
+        .successHeader {
+            @include display-flex();
+            @include justify-content(center);
+            @include align-items(center);
+            text-align: center;
+            width: 100%;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* 400px / 16px = 25em */
+        @media only screen and (max-width: 25em) {
+            width: 20rem;
+        }
+
+        /* 260px / 16px = 16.25em */
+        @media only screen and (max-width: 16.25em) {
+            width: 15rem;
+        }
+    }
+
+    .error {
+        width: 40rem;
+        gap: 5rem;
+        @include display-flex();
+        @include justify-content(center);
+        @include align-items(center);
+        @include flex-direction-column();
+        
+        .errorHeader {
+            width: 100%;
+            @include display-flex();
+            @include justify-content(space-between);
+            @include align-items(center);
+
+            .errorTitle {
+                font-size: 1.8rem;
+            }
+
+            .headerCancel {
+                width: 2.2rem;
+                height: 2.2rem;
+
+                &:hover {
+                    cursor: pointer;
+                    @include prefix(filter, invert(100%), webkit);
+                }
+            }
+        }
+
+        .errorFooter {
+            width: 100%;
+            @include display-flex();
+            @include justify-content(end);
+        }
+
+        /* 400px / 16px = 25em */
+        @media only screen and (max-width: 25em) {
+            width: 20rem;
+        }
+
+        /* 260px / 16px = 16.25em */
+        @media only screen and (max-width: 16.25em) {
+            width: 15rem;
+        }
+    }
+}
+
+.notificationModalImage {
+    img {
+        width: 6rem;
+        height: 6rem;
+    }
+}

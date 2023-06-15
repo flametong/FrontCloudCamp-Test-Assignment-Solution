@@ -1,0 +1,39 @@
+@use "../../styles/global/" as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -100;
+}
+
+.pageWindow {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+}
+
+.content {
+    padding: 20px;
+    border-radius: 12px;
+    @include prefix(transition, 0.5s opacity, webkit o);
+    @include prefix(transform, scale(0.5), webkit ms);
+}
+
+.opened {
+    pointer-events: auto;
+    opacity: 1;
+    z-index: 5;
+
+    .content {
+        @include prefix(transform, scale(1), webkit ms);
+        opacity: 1;
+    }
+}
