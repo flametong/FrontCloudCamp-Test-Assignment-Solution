@@ -9,7 +9,7 @@ import { Modal } from '../Modal/Modal'
 import { Button } from '../Button/Button'
 import { Response } from '../../data/interfaces'
 
-interface MessageModalProps {
+interface ModalNotificationProps {
     show: boolean
     setShow: (value: boolean) => void
     response?: Response
@@ -17,7 +17,7 @@ interface MessageModalProps {
     isError?: boolean
 }
 
-export const ModalNotification = (props: MessageModalProps) => {
+export const ModalNotification = (props: ModalNotificationProps) => {
     const {
         show, setShow, isSuccess, isError, response
     } = props
