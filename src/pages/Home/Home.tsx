@@ -1,5 +1,4 @@
 import styles from "./Home.module.scss"
-import UserAvatar from "../../images/avatar.jpg"
 
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
@@ -58,11 +57,9 @@ export const Home = () => {
     return (
         <div className={styles.home}>
             <div className={styles.profile}>
-                <img 
-                    src={UserAvatar}
-                    alt="user profile picture" 
-                    className={styles.picture}
-                />
+                <div className={styles.avatar}>
+                    <p className={styles.avatarTitle}>НП</p>
+                </div>
                 <div>
                     <p className={styles.name}>Никита Пуляевский</p>
                     <ul className={styles.links}>
@@ -77,7 +74,7 @@ export const Home = () => {
                      id="phone"
                      name="phone"
                      labelTitle="Номер телефона"
-                     placeholder="+7 (999) 999-99-99"
+                     placeholder="+7 999 999-99-99"
                      theme={InputThemes.BackgroundGray}
                      control={control}
                      error={errors.phone?.message}

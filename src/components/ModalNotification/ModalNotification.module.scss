@@ -2,16 +2,17 @@
 
 .notificationModalContainer {
     background-color: #FFF;
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     width: 100%;
-    max-width: 40rem;
-    padding: 3rem;
+    max-width: 46rem;
+    padding: 3.2rem;
+    box-sizing: border-box;
     @include display-flex();
     @include justify-content(center);
     @include align-items(center);
 
     .success {
-        width: 40rem;
+        width: 46rem;
         gap: 5rem;
         @include display-flex();
         @include justify-content(center);
@@ -23,13 +24,12 @@
             @include justify-content(center);
             @include align-items(center);
             text-align: center;
-            width: 100%;
             font-size: 1.8rem;
             font-weight: bold;
         }
 
-        /* 400px / 16px = 25em */
-        @media only screen and (max-width: 25em) {
+        /* 460px / 16px = 28.75em */
+        @media only screen and (max-width: 28.75em) {
             width: 20rem;
         }
 
@@ -40,7 +40,7 @@
     }
 
     .error {
-        width: 40rem;
+        width: 46rem;
         gap: 5rem;
         @include display-flex();
         @include justify-content(center);
@@ -54,12 +54,14 @@
             @include align-items(center);
 
             .errorTitle {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .headerCancel {
-                width: 2.2rem;
-                height: 2.2rem;
+                img {
+                    width: 2.8rem;
+                    height: 2.8rem;
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -74,8 +76,8 @@
             @include justify-content(end);
         }
 
-        /* 400px / 16px = 25em */
-        @media only screen and (max-width: 25em) {
+        /* 460px / 16px = 28.75em */
+        @media only screen and (max-width: 28.75em) {
             width: 20rem;
         }
 
@@ -87,8 +89,23 @@
 }
 
 .notificationModalImage {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10rem;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
     img {
-        width: 6rem;
-        height: 6rem;
+        width: 3.8rem;
+        height: 3.8rem;
     }
+}
+
+.successImage {
+    background-color: rgba(5, 174, 113, 0.15);
+}
+
+.errorImage {
+    background-color: rgba(232, 78, 88, 0.15);
 }

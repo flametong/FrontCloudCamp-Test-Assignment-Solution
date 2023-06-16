@@ -1,32 +1,41 @@
 @use "../../styles/global/" as *;
 
 .home {
-    max-width: 80rem;
+    max-width: 90rem;
     width: 90%;
-    height: 60rem;
+    height: 70.4rem;
     background-color: #FFF;
-    border-radius: 2rem;
-    margin: 5rem auto 0;
-    padding: 2rem;
+    border-radius: 1.2rem 1.2rem 0 0;
+    margin: 2.4rem auto 0;
+    padding: $default-paddding;
 
     .profile {
-        padding-bottom: 2rem;
-        border-bottom: 0.2rem solid #EFF2ED;
+        padding-bottom: $default-paddding;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
         @include display-flex();
         @include align-items(center);
 
-        .picture {
-            width: 7rem;
-            height: 7rem;
+        .avatar {
+            min-width: 8rem;
+            min-height: 8rem;
             margin-right: 2rem;
-            border-radius: 50%;
-            @include prefix(object-fit, cover, o);
+            border-radius: 10rem;
+            background-color: #D5E4F7;
+            @include display-flex();
+            @include align-items(center);
+            @include justify-content(center);
+
+            .avatarTitle {
+                color: #212830;
+                font-size: 4rem;
+            }
         }
 
         .name {
             font-size: $title-size;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            line-height: 2.6rem;
         }
 
         .links {
@@ -41,35 +50,12 @@
         @include justify-content(center);
         @include align-items(start);
 
-        .element {
-            @include display-flex();
-            @include flex-direction-column();
-            padding-top: 2rem;
-            font-size: $label-size;
-
-            .label {
-                margin-bottom: 0.5rem;
-            }
-
-            .input {
-                background-color: #F5F5F5;
-                border: 0.2rem solid #E7E7E7;
-                border-radius: 0.5rem;
-                padding: 1rem;
-                width: 30rem;
-
-                &:focus {
-                    outline: 0.2rem solid $color-purple;
-                }
-            }
-        }
-
         .buttonStart {
-            margin-top: 4rem;
+            margin-top: 4.8rem;
             
             /* 380px / 16px = 23.75em */
             @media only screen and (max-width: 23.75em) {
-                margin: 4rem auto 0;
+                width: 100%;
             }
         }
     }

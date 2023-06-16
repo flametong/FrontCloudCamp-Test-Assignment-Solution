@@ -6,15 +6,17 @@
     font-size: $label-size;
 
     .label {
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
         @include width-fit-content();
     }
     
     .textarea {
         resize: vertical;
-        padding: 1rem;
-        border: 0.2rem solid #E7E7E7;
-        border-radius: 0.5rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.16);
+        border-radius: 0.4rem;
+        padding: 1.2rem;
+        height: 8.4rem;
+        font-size: $label-size;
 
         &:focus {
             outline: 0.2rem solid $color-purple; 
@@ -26,6 +28,8 @@
         @include justify-content(space-between);
         @include align-items(center);
         margin-top: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
 
         .errorContainer {
             .errorText {

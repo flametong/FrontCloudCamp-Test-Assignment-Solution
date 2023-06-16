@@ -4,8 +4,10 @@
     background-color: $color-purple;
     border: 0.1rem solid $color-purple;
     color: #FFF;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: 0.4rem;
+    font-size: $label-size;
+    line-height: 2rem;
     @include prefix(transition, 0.3s, webkit o);
   
     &:hover {
@@ -29,14 +31,15 @@
 .adding {
     background-color: #FFF;
     color: $color-purple;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: $title-size;
     padding: 0;
-    width: 3rem;
-    height: 3rem;
-    border:none;
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0.4rem;
 
     &:hover {
-        @include prefix(transform, scale(0.8), webkit ms);
+        background-color: $color-purple;
+        color: #FFF;
+        cursor: pointer; 
     }
 }

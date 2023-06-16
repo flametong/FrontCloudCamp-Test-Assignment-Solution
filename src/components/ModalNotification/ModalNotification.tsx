@@ -8,6 +8,7 @@ import { RouteEndpoints } from '../../data/enums'
 import { Modal } from '../Modal/Modal'
 import { Button } from '../Button/Button'
 import { Response } from '../../data/interfaces'
+import clsx from 'clsx'
 
 interface ModalNotificationProps {
     show: boolean
@@ -36,7 +37,7 @@ export const ModalNotification = (props: ModalNotificationProps) => {
                             <p className={styles.successHeader}>
                                 { response?.message }
                             </p>
-                            <div className={styles.notificationModalImage}>
+                            <div className={clsx(styles.notificationModalImage, styles.successImage)}>
                                 <img src={SuccessIcon} alt="success icon"/>
                             </div>
                             <Button
@@ -57,7 +58,7 @@ export const ModalNotification = (props: ModalNotificationProps) => {
                                     <img src={CancelIcon} alt="cancel icon"/>
                                 </div>
                             </div>
-                            <div className={styles.notificationModalImage}>
+                            <div className={clsx(styles.notificationModalImage, styles.errorImage)}>
                                 <img src={ErrorIcon} alt="error icon" />
                             </div>
                             <div className={styles.errorFooter}>

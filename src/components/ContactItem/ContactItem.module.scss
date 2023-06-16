@@ -3,7 +3,7 @@
 .contact {
     @include display-flex();
     @include align-items(flex-end);
-    margin-right: 2rem;
+    margin-right: 1.7rem;
 
     .folderIcon {
         height: 1.6rem;
@@ -11,7 +11,8 @@
     }
 
     .link {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
         color: $color-purple;
 
         &:hover {

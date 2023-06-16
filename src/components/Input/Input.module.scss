@@ -3,22 +3,24 @@
 .inputContainer {
     @include display-flex();
     @include flex-direction-column();
-    padding: 1.5rem 0;
+    padding-top: $default-paddding;
     font-size: $label-size;
     width: 100%;
 
     .label {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
         @include width-fit-content();
     }
 
     .input {
         background-color: #FFF;
-        border: 0.2rem solid #E7E7E7;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        max-width: 30rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.16);
+        border-radius: 0.4rem;
+        padding: 1.2rem;
+        max-width: 40rem;
         width: 100%;
+        height: 4.4rem;
+        font-size: $label-size;
 
         &:focus {
             outline: 0.2rem solid $color-purple;
@@ -30,11 +32,13 @@
 
         .errorText {
             color: #ED4D59;
+            font-size: 1.2rem;
+            line-height: 1.6rem;
         }
     }
 
     .backgroundGray {
-        background-color: #F5F5F5;
+        background-color: rgba(0, 0, 0, 0.04);;
     }
 
     .removeIconContainer {
