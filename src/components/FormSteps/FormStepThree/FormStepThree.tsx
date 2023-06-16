@@ -1,12 +1,9 @@
-import styles from "./FormStepThree.module.scss"
-
 import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { FormStepThreeInputs } from "../../../data/interfaces"
-import { Button } from "../../Button/Button"
-import { ButtonThemes, FormInputs, Steps } from "../../../data/enums"
-import { useDispatch, useSelector } from "react-redux"
-import { changeStep, selectAdvantagesTexts, selectCheckboxNumbers } from "../../../features/slices/formSlice"
+import { FormInputs } from "../../../data/enums"
+import { useSelector } from "react-redux"
+import { selectAdvantagesTexts, selectCheckboxNumbers } from "../../../features/slices/formSlice"
 import { ControllerTextarea } from "../../ControllerItems/ControllerTextarea"
 import { useEffect, useState } from "react"
 import { formStepThreeSchema } from "../../../data/shemas"
@@ -14,6 +11,7 @@ import { FormStepThreeType } from "../../../data/types"
 import { usePostFormDataMutation } from "../../../features/api/formApi"
 import { ModalNotification } from "../../ModalNotification/ModalNotification"
 import { makePhoneNumber } from "../../../features/appLogic"
+import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
 
 export const FormStepThree = () => {
     const [
@@ -33,7 +31,6 @@ export const FormStepThree = () => {
         resolver: yupResolver(formStepThreeSchema) 
     })
 
-    const dispatch = useDispatch()
     const advantagesTexts = useSelector(selectAdvantagesTexts)
     const checkboxNumbers = useSelector(selectCheckboxNumbers)
     
@@ -82,25 +79,11 @@ export const FormStepThree = () => {
                 error={errors.about?.message}
                 textMaxLength="200"
             />
-            <div className={styles.buttonContainer}>
-                <Button
-                    id="button-back-1"
-                    className={styles.button}
-                    type="button"
-                    theme={ButtonThemes.Outline}
-                    onClick={() => dispatch(changeStep(Steps.Two))}
-                >
-                    Назад
-                </Button>
-                <Button
-                    id="button-next-1"
-                    className={styles.button}
-                    type="submit"
-                    theme={ButtonThemes.Primary}
-                >
-                    Отправить
-                </Button>
-            </div>
+            <ButtonContainer 
+                id="3"
+                buttonPrevTitle="Назад"
+                buttonNextTitle="Отправить"
+            />
             <ModalNotification 
                 show={showNotificationModal}  
                 setShow={setShowNotificationModal}

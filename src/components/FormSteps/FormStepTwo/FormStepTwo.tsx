@@ -17,6 +17,7 @@ import { v4 } from "uuid"
 import { Advantage } from "../../../data/interfaces"
 import { CheckboxGroup } from "../../Groups/CheckboxGroup/CheckboxGroup"
 import { RadioGroup } from "../../Groups/RadioGroup/RadioGroup"
+import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
 
 export const FormStepTwo = () => {
     const {
@@ -58,25 +59,11 @@ export const FormStepTwo = () => {
             </div>
             <CheckboxGroup control={control} />
             <RadioGroup control={control} />
-            <div className={styles.buttonContainer}>
-                <Button
-                    id="button-back-1"
-                    className={styles.button}
-                    type="button"
-                    theme={ButtonThemes.Outline}
-                    onClick={() => dispatch(changeStep(Steps.One))}
-                >
-                    Назад
-                </Button>
-                <Button
-                    id="button-next-1"
-                    className={styles.button}
-                    type="submit"
-                    theme={ButtonThemes.Primary}
-                >
-                    Далее
-                </Button>
-            </div>
+            <ButtonContainer 
+                id="2"
+                buttonPrevTitle="Назад"
+                buttonNextTitle="Далее"
+            />
         </form>
     )
 }

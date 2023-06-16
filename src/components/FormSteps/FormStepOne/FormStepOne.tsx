@@ -1,18 +1,15 @@
-import styles from "./FormStepOne.module.scss"
-
-import { useNavigate } from "react-router-dom"
-import { ButtonThemes, FormInputs, RouteEndpoints, Sex, Steps } from "../../../data/enums"
+import { FormInputs, Sex, Steps } from "../../../data/enums"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import { ControllerInput } from "../../ControllerItems/ControllerInput"
 import { ControllerSelect } from "../../ControllerItems/ControllerSelect"
 import { getArrayFromEnum } from "../../../features/appLogic"
-import { Button } from "../../Button/Button"
 import { useDispatch } from "react-redux"
 import { changeStep } from "../../../features/slices/formSlice"
 import { useEffect } from "react"
 import { FormStepOneType } from "../../../data/types"
 import { formStepOneSchema } from "../../../data/shemas"
+import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
 
 export const FormStepOne = () => {
     const {
@@ -29,7 +26,6 @@ export const FormStepOne = () => {
         resolver: yupResolver(formStepOneSchema) 
     })
 
-    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const onSubmit = () => {
@@ -89,25 +85,11 @@ export const FormStepOne = () => {
                 control={control}
                 error={errors.sex?.message}
             />
-            <div className={styles.buttonContainer}>
-                <Button
-                    id="button-back-1"
-                    className={styles.button}
-                    type="button"
-                    theme={ButtonThemes.Outline}
-                    onClick={() => navigate(RouteEndpoints.Home)}
-                >
-                    Назад
-                </Button>
-                <Button
-                    id="button-next-1"
-                    className={styles.button}
-                    type="submit"
-                    theme={ButtonThemes.Primary}
-                >
-                    Далее
-                </Button>
-            </div>
+            <ButtonContainer 
+                id="1"
+                buttonPrevTitle="Назад"
+                buttonNextTitle="Далее"
+            />
         </form>
     )
 }
