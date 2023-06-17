@@ -3,8 +3,8 @@ import styles from "./ButtonContainer.module.scss"
 import { Button } from "../Button/Button"
 import { ButtonThemes, RouteEndpoints, Steps } from "../../data/enums"
 import { useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
 import { changeStep, selectStep } from "../../features/slices/formSlice"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
 interface ButtonContainerProps {
     id: string
@@ -17,9 +17,9 @@ export const ButtonContainer = (props: ButtonContainerProps) => {
         buttonPrevTitle, buttonNextTitle, id
     } = props
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
+    const step = useAppSelector(selectStep)
     const navigate = useNavigate()
-    const step = useSelector(selectStep)
 
     const callback = (step === Steps.One) 
                         ? () => navigate(RouteEndpoints.Home)

@@ -1,11 +1,11 @@
 import styles from "./AdvantageItem.module.scss"
 import BinIcon from "../../images/bin.svg"
 
-import { useDispatch, useSelector } from "react-redux"
 import { removeAdvantage, selectAdvantages, updateAdvantageText } from "../../features/slices/formSlice"
 import { findById } from "../../features/appLogic"
 import { Advantage } from "../../data/interfaces"
 import { SyntheticEvent, useCallback } from "react"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
 type AdvantageItemProps = {
     advantage: Advantage
@@ -13,8 +13,8 @@ type AdvantageItemProps = {
 
 export const AdvantageItem = ({advantage}: AdvantageItemProps) => {
 
-    const dispatch = useDispatch()
-    const advantages = useSelector(selectAdvantages)
+    const dispatch = useAppDispatch()
+    const advantages = useAppSelector(selectAdvantages)
 
     const index = findById(advantages, advantage.id)
 

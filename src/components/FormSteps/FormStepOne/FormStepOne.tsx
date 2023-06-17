@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form"
 import { ControllerInput } from "../../ControllerItems/ControllerInput"
 import { ControllerSelect } from "../../ControllerItems/ControllerSelect"
 import { getArrayFromEnum } from "../../../features/appLogic"
-import { useDispatch } from "react-redux"
 import { changeStep } from "../../../features/slices/formSlice"
 import { useEffect } from "react"
 import { FormStepOneType } from "../../../data/types"
 import { formStepOneSchema } from "../../../data/shemas"
 import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
+import { useAppDispatch } from "../../../app/hooks"
 
 export const FormStepOne = () => {
     const {
@@ -26,7 +26,7 @@ export const FormStepOne = () => {
         resolver: yupResolver(formStepOneSchema) 
     })
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const onSubmit = () => {
         localStorage.setItem(FormInputs.Nickname, control._getWatch(FormInputs.Nickname))

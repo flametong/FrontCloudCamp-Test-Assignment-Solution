@@ -2,7 +2,6 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { FormStepThreeInputs } from "../../../data/interfaces"
 import { FormInputs } from "../../../data/enums"
-import { useSelector } from "react-redux"
 import { selectAdvantagesTexts, selectCheckboxNumbers } from "../../../features/slices/formSlice"
 import { ControllerTextarea } from "../../ControllerItems/ControllerTextarea"
 import { useEffect, useState } from "react"
@@ -12,6 +11,7 @@ import { usePostFormDataMutation } from "../../../features/api/formApi"
 import { ModalNotification } from "../../ModalNotification/ModalNotification"
 import { makePhoneNumber } from "../../../features/appLogic"
 import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
+import { useAppSelector } from "../../../app/hooks"
 
 export const FormStepThree = () => {
     const [
@@ -31,8 +31,8 @@ export const FormStepThree = () => {
         resolver: yupResolver(formStepThreeSchema) 
     })
 
-    const advantagesTexts = useSelector(selectAdvantagesTexts)
-    const checkboxNumbers = useSelector(selectCheckboxNumbers)
+    const advantagesTexts = useAppSelector(selectAdvantagesTexts)
+    const checkboxNumbers = useAppSelector(selectCheckboxNumbers)
     
     const [showNotificationModal, setShowNotificationModal] = useState(false)
 

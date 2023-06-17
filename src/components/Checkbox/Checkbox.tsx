@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux"
 import styles from "./Checkbox.module.scss"
 
 import { 
@@ -9,6 +8,7 @@ import {
     forwardRef
 } from "react"
 import { changeCheckbox } from "../../features/slices/formSlice"
+import { useAppDispatch } from "../../app/hooks"
 
 type DefaultInputPropsType = 
         DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -23,7 +23,7 @@ export const Checkbox = forwardRef((props: CheckboxPropsType, ref: Ref<HTMLInput
         id, onChange, onChangeChecked, children, ...restProps 
     } = props
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(e)

@@ -15,11 +15,11 @@ import {
 import { useEffect } from "react"
 import { Button } from "../../components/Button/Button"
 import { ControllerInput } from "../../components/ControllerItems/ControllerInput"
-import { useDispatch } from "react-redux"
 import { changeStep } from "../../features/slices/formSlice"
 import { homeSchema } from "../../data/shemas"
 import { HomeType } from "../../data/types"
 import { ControllerPhoneInput } from "../../components/ControllerItems/ControllerPhoneInput"
+import { useAppDispatch } from "../../app/hooks"
 
 export const Home = () => {
     const {
@@ -36,7 +36,7 @@ export const Home = () => {
     })
     
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     
     const onSubmit = () => {
         localStorage.setItem('phone', control._getWatch('phone'))

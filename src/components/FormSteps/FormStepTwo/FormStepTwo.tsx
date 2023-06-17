@@ -2,7 +2,6 @@ import styles from "./FormStepTwo.module.scss"
 
 import { Button } from "../../Button/Button"
 import { ButtonThemes, FormInputs, Steps } from "../../../data/enums"
-import { useDispatch, useSelector } from "react-redux"
 import { 
     addAdvantage, 
     changeStep, 
@@ -18,6 +17,7 @@ import { Advantage } from "../../../data/interfaces"
 import { CheckboxGroup } from "../../Groups/CheckboxGroup/CheckboxGroup"
 import { RadioGroup } from "../../Groups/RadioGroup/RadioGroup"
 import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 
 export const FormStepTwo = () => {
     const {
@@ -26,9 +26,9 @@ export const FormStepTwo = () => {
         formState: { errors }
     } = useForm <any>()
 
-    const dispatch = useDispatch()
-    const advantages = useSelector(selectAdvantages)
-    const radio = useSelector(selectRadio)
+    const dispatch = useAppDispatch()
+    const advantages = useAppSelector(selectAdvantages)
+    const radio = useAppSelector(selectRadio)
 
     const onSubmit = () => {
         localStorage.setItem(FormInputs.RadioGroup, radio)
