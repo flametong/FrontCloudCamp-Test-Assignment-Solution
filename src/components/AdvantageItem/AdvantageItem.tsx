@@ -1,5 +1,5 @@
 import styles from "./AdvantageItem.module.scss"
-import BinIcon from "../../images/bin.svg"
+import { ReactComponent as BinIcon } from "../../images/bin.svg"
 
 import { removeAdvantage, selectAdvantages, updateAdvantageText } from "../../features/slices/formSlice"
 import { findById } from "../../features/appLogic"
@@ -43,11 +43,7 @@ export const AdvantageItem = ({advantage}: AdvantageItemProps) => {
                     type="button"
                     onClick={removeAdvantageCallback}
                 >
-                    <img 
-                        src={BinIcon} 
-                        alt="bin icon"
-                        className={styles.icon}
-                    />
+                    <BinIcon className={styles.icon} />
                 </button>
             </div>
         </div>

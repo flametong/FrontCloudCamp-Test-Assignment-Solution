@@ -58,7 +58,8 @@
             }
 
             .headerCancel {
-                img {
+
+                .icon {
                     width: 2.8rem;
                     height: 2.8rem;
                 }
@@ -96,7 +97,7 @@
     @include align-items(center);
     @include justify-content(center);
 
-    img {
+    .icon {
         width: 3.8rem;
         height: 3.8rem;
     }

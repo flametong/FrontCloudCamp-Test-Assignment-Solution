@@ -1,4 +1,4 @@
-import FolderIcon from "../../images/folder.svg"
+import { ReactComponent as FolderIcon } from "../../images/folder.svg"
 import { Contact } from "../../data/interfaces"
 import styles from "./ContactItem.module.scss"
 
@@ -9,7 +9,7 @@ type ContactItemProps = {
 export const ContactItem = ({ contact }: ContactItemProps) => {
     return (
         <li className={styles.contact}>
-            <img className={styles.folderIcon} src={FolderIcon} alt="folder icon" />
+            <FolderIcon className={styles.folderIcon} />
             <a className={styles.link} href={contact.link}>{contact.title}</a>
         </li>
     )

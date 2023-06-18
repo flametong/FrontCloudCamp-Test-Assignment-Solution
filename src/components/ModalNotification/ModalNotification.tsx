@@ -1,9 +1,9 @@
 import styles from './ModalNotification.module.scss'
 
-import {useNavigate} from 'react-router-dom'
-import SuccessIcon from "../../images/success.svg"
-import ErrorIcon from "../../images/error.svg"
-import CancelIcon from "../../images/cancel.svg"
+import { useNavigate } from 'react-router-dom'
+import { ReactComponent as SuccessIcon } from "../../images/success.svg"
+import { ReactComponent as ErrorIcon } from "../../images/error.svg"
+import { ReactComponent as CancelIcon } from "../../images/cancel.svg"
 import { RouteEndpoints } from '../../data/enums'
 import { Modal } from '../Modal/Modal'
 import { Button } from '../Button/Button'
@@ -38,7 +38,7 @@ export const ModalNotification = (props: ModalNotificationProps) => {
                                 { response?.message }
                             </p>
                             <div className={clsx(styles.notificationModalImage, styles.successImage)}>
-                                <img src={SuccessIcon} alt="success icon"/>
+                                <SuccessIcon className={styles.icon} />
                             </div>
                             <Button
                                 id="button-to-main"
@@ -55,11 +55,11 @@ export const ModalNotification = (props: ModalNotificationProps) => {
                             <div className={styles.errorHeader}>
                                 <p className={styles.errorTitle}>Ошибка</p>
                                 <div className={styles.headerCancel} onClick={() => {setShow(false)}}>
-                                    <img src={CancelIcon} alt="cancel icon"/>
+                                    <CancelIcon className={styles.icon} />
                                 </div>
                             </div>
                             <div className={clsx(styles.notificationModalImage, styles.errorImage)}>
-                                <img src={ErrorIcon} alt="error icon" />
+                                <ErrorIcon className={styles.icon} />
                             </div>
                             <div className={styles.errorFooter}>
                                 <Button
