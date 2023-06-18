@@ -26,7 +26,7 @@ export const Select = forwardRef((props: SelectPropsType, ref: Ref<HTMLSelectEle
     
     const mappedOptions = options 
             && options.map((item, i) => (
-                <option key={i} className={styles.option}>{item}</option>
+                <option key={i} className={styles.option} value={item}>{item}</option>
             ))
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
