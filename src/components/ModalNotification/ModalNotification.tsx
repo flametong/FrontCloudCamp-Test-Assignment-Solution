@@ -5,8 +5,8 @@ import { ReactComponent as SuccessIcon } from "../../images/success.svg"
 import { ReactComponent as ErrorIcon } from "../../images/error.svg"
 import { ReactComponent as CancelIcon } from "../../images/cancel.svg"
 import { RouteEndpoints } from '../../data/enums'
-import { Modal } from '../Modal/Modal'
-import { Button } from '../Button/Button'
+import { Modal } from '../../ui/Modal/Modal'
+import { Button } from '../../ui/Button/Button'
 import { Response } from '../../data/interfaces'
 import clsx from 'clsx'
 

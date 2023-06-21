@@ -1,6 +1,6 @@
 import styles from "./ButtonContainer.module.scss"
 
-import { Button } from "../Button/Button"
+import { Button } from "../../ui/Button/Button"
 import { ButtonThemes, RouteEndpoints, Steps } from "../../data/enums"
 import { useNavigate } from "react-router-dom"
 import { changeStep, selectStep } from "../../features/slices/formSlice"

@@ -1,6 +1,6 @@
 import styles from "./FormStepTwo.module.scss"
 
-import { Button } from "../../Button/Button"
+import { Button } from "../../../ui/Button/Button"
 import { ButtonThemes, FormInputs, Steps } from "../../../data/enums"
 import { 
     addAdvantage, 
@@ -10,13 +10,13 @@ import {
     setAllCheckboxesFalse 
 } from "../../../features/slices/formSlice"
 import { useForm } from "react-hook-form"
-import { AdvantageItem } from "../../AdvantageItem/AdvantageItem"
+import { AdvantageItem } from "../../../components/AdvantageItem/AdvantageItem"
 import clsx from "clsx"
 import { v4 } from "uuid"
 import { Advantage } from "../../../data/interfaces"
-import { CheckboxGroup } from "../../Groups/CheckboxGroup/CheckboxGroup"
-import { RadioGroup } from "../../Groups/RadioGroup/RadioGroup"
-import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
+import { CheckboxGroup } from "../../../ui/Groups/CheckboxGroup/CheckboxGroup"
+import { RadioGroup } from "../../../ui/Groups/RadioGroup/RadioGroup"
+import { ButtonContainer } from "../../../components/ButtonContainer/ButtonContainer"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 
 export const FormStepTwo = () => {

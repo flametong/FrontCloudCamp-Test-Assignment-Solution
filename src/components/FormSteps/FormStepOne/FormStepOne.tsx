@@ -1,14 +1,14 @@
 import { FormInputs, Sex, Steps } from "../../../data/enums"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
-import { ControllerInput } from "../../ControllerItems/ControllerInput"
-import { ControllerSelect } from "../../ControllerItems/ControllerSelect"
+import { ControllerInput } from "../../../ui/ControllerItems/ControllerInput"
+import { ControllerSelect } from "../../../ui/ControllerItems/ControllerSelect"
 import { getArrayFromEnum } from "../../../features/appLogic"
 import { changeStep } from "../../../features/slices/formSlice"
 import { useEffect } from "react"
 import { FormStepOneType } from "../../../data/types"
 import { formStepOneSchema } from "../../../data/shemas"
-import { ButtonContainer } from "../../ButtonContainer/ButtonContainer"
+import { ButtonContainer } from "../../../components/ButtonContainer/ButtonContainer"
 import { useAppDispatch } from "../../../app/hooks"
 
 export const FormStepOne = () => {

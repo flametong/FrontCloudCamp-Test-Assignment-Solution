@@ -13,12 +13,12 @@ import {
     Steps 
 } from "../../data/enums"
 import { useEffect } from "react"
-import { Button } from "../../components/Button/Button"
-import { ControllerInput } from "../../components/ControllerItems/ControllerInput"
+import { Button } from "../../ui/Button/Button"
+import { ControllerInput } from "../../ui/ControllerItems/ControllerInput"
 import { changeStep } from "../../features/slices/formSlice"
 import { homeSchema } from "../../data/shemas"
 import { HomeType } from "../../data/types"
-import { ControllerPhoneInput } from "../../components/ControllerItems/ControllerPhoneInput"
+import { ControllerPhoneInput } from "../../ui/ControllerItems/ControllerPhoneInput"
 import { useAppDispatch } from "../../app/hooks"
 
 export const Home = () => {
