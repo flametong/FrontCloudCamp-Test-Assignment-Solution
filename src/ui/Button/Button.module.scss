@@ -8,7 +8,7 @@
     border-radius: 0.4rem;
     font-size: $label-size;
     line-height: 2rem;
-    @include prefix(transition, 0.3s, webkit o);
+    transition: 0.3s;
   
     &:hover {
       background-color: #FFF;

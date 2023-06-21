@@ -3,15 +3,14 @@
 .buttonContainer {
     width: 100%;
     margin-top: 6.4rem;
-    @include display-flex();
-    @include prefix(flex-wrap, wrap, ms);
-    @include justify-content(space-between);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     /* 510px / 16px = 31.875em */
     @media only screen and (max-width: 31.875em) {
         margin-top: 2.4rem;
         height: 10rem;
-        @include flex-direction-column();
-        @include align-items(space-between);
+        flex-direction: column;
     }
 }

@@ -1,8 +1,8 @@
 @use "../../styles/global/" as *;
 
 .inputContainer {
-    @include display-flex();
-    @include align-items(center);
+    display: flex;
+    align-items: center;
     padding: 0.4rem 0;
     font-size: $label-size;
 
@@ -36,7 +36,7 @@
                 cursor: pointer;
 
                 .icon {
-                    @include prefix(filter, invert(38%) sepia(62%) saturate(6494%) hue-rotate(232deg) brightness(103%) contrast(96%), webkit);
+                    filter: invert(38%) sepia(62%) saturate(6494%) hue-rotate(232deg) brightness(103%) contrast(96%);
                 }
             }
         }

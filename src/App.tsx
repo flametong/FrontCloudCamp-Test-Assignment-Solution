@@ -1,5 +1,3 @@
-import './dist/styles.css'
-
 import { Home } from './pages/Home/Home';
 import { Form } from './pages/Form/Form';
 import { Navigate, Route, Routes } from 'react-router-dom';

@@ -7,22 +7,22 @@
     max-width: 46rem;
     padding: 3.2rem;
     box-sizing: border-box;
-    @include display-flex();
-    @include justify-content(center);
-    @include align-items(center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .success {
         width: 46rem;
         gap: 5rem;
-        @include display-flex();
-        @include justify-content(center);
-        @include align-items(center);
-        @include flex-direction-column();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         
         .successHeader {
-            @include display-flex();
-            @include justify-content(center);
-            @include align-items(center);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             font-size: 1.8rem;
             font-weight: bold;
@@ -42,16 +42,16 @@
     .error {
         width: 46rem;
         gap: 5rem;
-        @include display-flex();
-        @include justify-content(center);
-        @include align-items(center);
-        @include flex-direction-column();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         
         .errorHeader {
             width: 100%;
-            @include display-flex();
-            @include justify-content(space-between);
-            @include align-items(center);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             .errorTitle {
                 font-size: 2rem;
@@ -66,15 +66,15 @@
 
                 &:hover {
                     cursor: pointer;
-                    @include prefix(filter, invert(100%), webkit);
+                    filter: invert(100%);
                 }
             }
         }
 
         .errorFooter {
             width: 100%;
-            @include display-flex();
-            @include justify-content(end);
+            display: flex;
+            justify-content: flex-end;
         }
 
         /* 460px / 16px = 28.75em */
@@ -93,10 +93,10 @@
     width: 8rem;
     height: 8rem;
     border-radius: 10rem;
-    @include display-flex();
-    @include align-items(center);
-    @include justify-content(center);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     .icon {
         width: 3.8rem;
         height: 3.8rem;

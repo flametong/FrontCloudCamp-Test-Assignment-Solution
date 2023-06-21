@@ -3,7 +3,7 @@
 .formPageContainer {
     max-width: 90rem;
     width: 90%;
-    @include height-fit-content();
+    height: fit-content;
     background-color: #FFF;
     border-radius: 2.4rem;
     margin: 2.4rem auto 0;

@@ -12,8 +12,8 @@
     .profile {
         padding-bottom: $default-paddding;
         border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
-        @include display-flex();
-        @include align-items(center);
+        display: flex;
+        align-items: center;
 
         .avatar {
             min-width: 8rem;
@@ -21,9 +21,9 @@
             margin-right: 2rem;
             border-radius: 10rem;
             background-color: #D5E4F7;
-            @include display-flex();
-            @include align-items(center);
-            @include justify-content(center);
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             .avatarTitle {
                 color: #212830;
@@ -39,22 +39,22 @@
         }
 
         .links {
-            @include display-flex();
-            @include prefix(flex-wrap, wrap, ms);
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 
     .form {
-        @include display-flex();
-        @include flex-direction-column();
-        @include justify-content(center);
-        @include align-items(start);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
         .buttonStart {
             margin-top: 4.8rem;
             
-            /* 380px / 16px = 23.75em */
-            @media only screen and (max-width: 23.75em) {
+            /* 466px / 16px = 29.125em */
+            @media only screen and (max-width: 29.125em) {
                 width: 100%;
             }
         }

@@ -2,10 +2,10 @@
 
 .container {
     font-size: $label-size;
-    @include display-flex();
-    @include align-items(center);
     margin-top: 0.1rem;
-
+    display: flex;
+    align-items: center;
+    
     .label {
         padding-left: 1rem;
     }

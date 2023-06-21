@@ -5,8 +5,8 @@
 }
 
 .advantages {
-    @include display-flex();
-    @include flex-direction-column();
+    display: flex;
+    flex-direction: column;
 }
 
 .advantagesTitle {

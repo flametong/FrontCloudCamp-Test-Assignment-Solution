@@ -1,15 +1,15 @@
 @use "../../styles/global/" as *;
 
 .inputContainer {
-    @include display-flex();
-    @include flex-direction-column();
+    display: flex;
+    flex-direction: column;
     padding-top: $default-paddding;
     font-size: $label-size;
     width: 100%;
 
     .label {
         margin-bottom: 0.8rem;
-        @include width-fit-content();
+        width: fit-content;
     }
 
     .input {
