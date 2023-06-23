@@ -1,23 +1,17 @@
 import styles from "./FormStepTwo.module.scss"
 
-import { Button } from "../../../ui/Button/Button"
-import { ButtonThemes, FormInputs, Steps } from "../../../data/enums"
+import { FormInputs, Steps } from "../../../data/enums"
 import { 
-    addAdvantage, 
     changeStep, 
-    selectAdvantages, 
     selectRadio,
     setAllCheckboxesFalse 
 } from "../../../features/slices/formSlice"
 import { useForm } from "react-hook-form"
-import { AdvantageItem } from "../../../components/AdvantageItem/AdvantageItem"
-import clsx from "clsx"
-import { v4 } from "uuid"
-import { Advantage } from "../../../data/interfaces"
 import { CheckboxGroup } from "../../../ui/Groups/CheckboxGroup/CheckboxGroup"
 import { RadioGroup } from "../../../ui/Groups/RadioGroup/RadioGroup"
 import { ButtonContainer } from "../../../components/ButtonContainer/ButtonContainer"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { AdvantageItems } from "../../AdvantageItems/AdvantageItems"
 
 export const FormStepTwo = () => {
     const {
@@ -27,7 +21,6 @@ export const FormStepTwo = () => {
     } = useForm <any>()
 
     const dispatch = useAppDispatch()
-    const advantages = useAppSelector(selectAdvantages)
     const radio = useAppSelector(selectRadio)
 
     const onSubmit = () => {
@@ -38,25 +31,7 @@ export const FormStepTwo = () => {
 
     return (
         <form className={styles.formContainer} onSubmit={handleSubmit(onSubmit)}>
-            <div className={styles.advantages}>
-                <label className={styles.advantagesTitle}>Преимущества</label>
-                { advantages && advantages.map((item: Advantage) => (
-                    <AdvantageItem key={item.id} advantage={item} />
-                )) }
-                <Button
-                    id="button-add"
-                    // Библиотека clsx была использована
-                    // для написания последовательности className'ов
-                    className={clsx(styles.button, styles.buttonAdding)}
-                    type="button"
-                    theme={ButtonThemes.Adding}
-                    // Библиотека uuid была использована
-                    // для простой генерации id
-                    onClick={() => dispatch(addAdvantage({ id: v4(), text: "" }))}
-                >
-                    +
-                </Button>
-            </div>
+            <AdvantageItems />
             <CheckboxGroup control={control} />
             <RadioGroup control={control} />
             <ButtonContainer 

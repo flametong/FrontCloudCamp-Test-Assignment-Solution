@@ -1,5 +1,14 @@
 @use "../../styles/global/" as *;
 
+.advantages {
+    display: flex;
+    flex-direction: column;
+}
+
+.advantagesTitle {
+    font-size: $label-size;
+}
+
 .inputContainer {
     display: flex;
     align-items: center;
